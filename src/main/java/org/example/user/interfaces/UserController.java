@@ -7,7 +7,9 @@ import jakarta.ws.rs.core.Response;
 import org.example.user.application.UserService;
 import org.example.user.domain.dto.request.CreateUserDTO;
 
-@Path("/users")
+import java.util.UUID;
+
+@Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserController {
@@ -15,14 +17,14 @@ public class UserController {
     @Inject
     private UserService userService;
 
-//    @GET
-//    @Path("/{id}")
-//    public Response findById(@PathParam("id") UUID id) {
-//        return this.userService.(id)
-//                .map(Response::ok)
-//                .orElse(Response.status(Response.Status.NOT_FOUND))
-//                .build();
-//    }
+    @GET
+    @Path("/{id}")
+    public Response findById(@PathParam("id") UUID id) {
+        return this.userService.findById(id)
+                .map(Response::ok)
+                .orElse(Response.status(Response.Status.NOT_FOUND))
+                .build();
+    }
 
     @POST
     public Response saveUser(CreateUserDTO newUser){

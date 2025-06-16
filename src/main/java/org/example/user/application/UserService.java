@@ -1,9 +1,13 @@
 package org.example.user.application;
 
+import org.example.user.domain.dto.response.GetUserDTO;
 import org.example.user.domain.exception.DefaultException;
 import org.example.user.domain.model.User;
 import org.example.user.domain.dto.request.CreateUserDTO;
 import org.example.user.domain.repository.UserRepository;
+
+import java.util.Optional;
+import java.util.UUID;
 
 public class UserService {
 
@@ -11,6 +15,20 @@ public class UserService {
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public Optional<GetUserDTO> findById(UUID id){
+        try {
+            User user = this.userRepository.findById(id);
+
+            return Optional.of(new GetUserDTO(
+                    user.getId(),
+                    user.getName(),
+                    user.getEmail()
+            ));
+        } catch (Exception ex) {
+            throw new DefaultException(500, "Error finding user");
+        }
     }
 
     public void saveUser(CreateUserDTO receivedUser) {
