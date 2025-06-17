@@ -1,11 +1,11 @@
-package org.example.user.interfaces;
+package org.example.user.interfaces.user;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.example.user.application.UserService;
-import org.example.user.domain.dto.request.CreateUserDTO;
+import org.example.user.application.user.UserService;
+import org.example.user.domain.dto.request.user.CreateUserDTO;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package org.example.user.domain.dto.response;
+package org.example.user.domain.dto.response.user;
 
 import java.util.UUID;
 

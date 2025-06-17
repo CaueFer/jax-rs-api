@@ -1,9 +1,9 @@
 package org.example.user.domain.repository;
+import org.example.user.domain.model.User;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.example.user.domain.model.User;
+import jakarta.persistence.EntityManager;
 
 import java.util.List;
 import java.util.UUID;

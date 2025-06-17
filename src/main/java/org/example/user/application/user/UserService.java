@@ -1,14 +1,16 @@
-package org.example.user.application;
+package org.example.user.application.user;
 
-import org.example.user.domain.dto.response.GetUserDTO;
+import jakarta.enterprise.context.ApplicationScoped;
+import org.example.user.domain.dto.response.user.GetUserDTO;
 import org.example.user.domain.exception.DefaultException;
 import org.example.user.domain.model.User;
-import org.example.user.domain.dto.request.CreateUserDTO;
+import org.example.user.domain.dto.request.user.CreateUserDTO;
 import org.example.user.domain.repository.UserRepository;
 
 import java.util.Optional;
 import java.util.UUID;
 
+@ApplicationScoped
 public class UserService {
 
     private final UserRepository userRepository;

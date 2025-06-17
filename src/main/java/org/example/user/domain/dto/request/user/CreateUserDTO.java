@@ -1,4 +1,4 @@
-package org.example.user.domain.dto.request;
+package org.example.user.domain.dto.request.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
